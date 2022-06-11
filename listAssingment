@@ -1,0 +1,103 @@
+
+In [121]:
+
+#q1
+my_list = [34, 56, 76, 45, 2, 12, 67, 98, 37, 54, 66]
+my_list.sort()
+my_list
+Out[121]:
+[2, 12, 34, 37, 45, 54, 56, 66, 67, 76, 98]
+In [14]:
+
+a=my_list[0:2]
+print(a)
+b=my_list[-2:]
+print(b)
+c=a+b
+print(c)
+sum(c)
+[2, 12]
+[76, 98]
+[2, 12, 76, 98]
+Out[14]:
+188
+In [120]:
+
+names = ["David", "Michael", "John", "James", "Greg", "Mark", "William", "Richard", "Thomas", "Steven","Mary", "Susan", "Maria", "Karen", "Lisa", "Linda", "Donna", "Patricia", "Debra", "Eric"]
+scores = [99, 87, 78, 86, 68, 94, 76, 97, 56, 98, 76, 87, 79, 90, 73, 93, 82, 69, 97, 98]
+names.extend(scores)
+print(names)
+#######
+k=names[0:20]
+print(k)
+v=scores[0:20]
+print(v)
+diction={'k':v}
+print(diction)
+diction.items()
+​
+​
+#??unable to find the answer
+print('{''} {''} {''} {''} {''} {''} {''} {''} {''} {''} {''} {''} {''} {''} {''} {''} {''} {''} {''} {''}'.format(99, 87, 78, 86, 68, 94, 76, 97, 56, 98, 76, 87, 79, 90, 73, 93, 82, 69, 97, 98))
+['David', 'Michael', 'John', 'James', 'Greg', 'Mark', 'William', 'Richard', 'Thomas', 'Steven', 'Mary', 'Susan', 'Maria', 'Karen', 'Lisa', 'Linda', 'Donna', 'Patricia', 'Debra', 'Eric', 99, 87, 78, 86, 68, 94, 76, 97, 56, 98, 76, 87, 79, 90, 73, 93, 82, 69, 97, 98]
+['David', 'Michael', 'John', 'James', 'Greg', 'Mark', 'William', 'Richard', 'Thomas', 'Steven', 'Mary', 'Susan', 'Maria', 'Karen', 'Lisa', 'Linda', 'Donna', 'Patricia', 'Debra', 'Eric']
+[99, 87, 78, 86, 68, 94, 76, 97, 56, 98, 76, 87, 79, 90, 73, 93, 82, 69, 97, 98]
+{'k': [99, 87, 78, 86, 68, 94, 76, 97, 56, 98, 76, 87, 79, 90, 73, 93, 82, 69, 97, 98]}
+99 87 78 86 68 94 76 97 56 98 76 87 79 90 73 93 82 69 97 98
+In [85]:
+
+#q3
+#maxscore
+scores.sort()
+scores
+Out[85]:
+[56,
+ 68,
+ 69,
+ 73,
+ 76,
+ 76,
+ 78,
+ 79,
+ 82,
+ 86,
+ 87,
+ 87,
+ 90,
+ 93,
+ 94,
+ 97,
+ 97,
+ 98,
+ 98,
+ 99]
+In [27]:
+
+scores[-1] #maxscore
+Out[27]:
+99
+In [29]:
+
+scores.count(99) 
+​
+Out[29]:
+1
+In [122]:
+
+#4
+list1=['January', 'February', 'March','April','May','June', 'July','August','September','October','November','December']
+list2=['31','28','30','31','30','31','30','31','30','31','30','31']
+print(list1)
+print(list2)
+list1[0]+'='+list2[0]
+print(list1[0]+'='+list2[0])
+Listnew=[list1[0]+'='+list2[0],list1[1]+'='+list2[1],list1[2]+'='+list2[2],list1[3]+'='+list2[3],list1[4]+'='+list2[4],
+        list1[5]+'='+list2[5],list1[6]+'='+list2[6],list1[7]+'='+list2[7],list1[8]+'='+list2[8],list1[9]+'='+list2[9],
+        list1[10]+'='+list2[10],list1[11]+'='+list2[11]]
+print(Listnew)
+​
+​
+['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+['31', '28', '30', '31', '30', '31', '30', '31', '30', '31', '30', '31']
+January=31
+['January=31', 'February=28', 'March=30', 'April=31', 'May=30', 'June=31', 'July=30', 'August=31', 'September=30', 'October=31', 'November=30', 'December=31']
