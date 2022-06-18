@@ -1,0 +1,269 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "6545fcdc",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['john', 'adam']\n"
+     ]
+    }
+   ],
+   "source": [
+    "#q1\n",
+    "currentusers=['ayse','ali','fatma','adam','john']\n",
+    "newusers=['james','celine','juliette','adam','john']\n",
+    "a=set(currentusers)\n",
+    "b=set(newusers)\n",
+    "c=list(b.intersection(currentusers))\n",
+    "print(c)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "b46e475d",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "name is available.\n",
+      "name is available.\n",
+      "name is available.\n",
+      "name is available.\n",
+      "please enter another name:\n"
+     ]
+    }
+   ],
+   "source": [
+    "for i in newusers:\n",
+    "    if i ==c[:] or i==c[0]:\n",
+    "        print('please enter another name:')\n",
+    "    else:\n",
+    "        print('name is available.')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "9851a5a7",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "name is available\n",
+      "name is available\n",
+      "name is available\n",
+      "name is available\n",
+      "please enter another name:\n"
+     ]
+    }
+   ],
+   "source": [
+    "currentusers=['ayse','ali','fatma','adam','john']\n",
+    "newusers=['james','celine','juliette','adam','john']\n",
+    "\n",
+    "for i in currentusers:\n",
+    "    pass\n",
+    "for j in newusers:\n",
+    "    if i==j:\n",
+    "        print('please enter another name:')\n",
+    "    else:\n",
+    "        print('name is available')\n",
+    "        "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e4831c61",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#q2\n",
+    "def colorprob(color,texture):\n",
+    "    if texture=='bumpy':\n",
+    "        if color=='green':\n",
+    "            return 1/7\n",
+    "        if color=='red':\n",
+    "            return 4/7\n",
+    "        if color=='yellow':\n",
+    "            return 2/7\n",
+    "    if texture=='smooth':\n",
+    "        if color=='green':\n",
+    "            return 1/7\n",
+    "        if color=='red':\n",
+    "            return 4/7\n",
+    "         if color=='yellow':\n",
+    "            return 2/7\n",
+    "prob=colorprob('red','bumpy')\n",
+    "print('{}'.format(prob))  "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 105,
+   "id": "4d2fd4e3",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "the person is a toddler\n"
+     ]
+    }
+   ],
+   "source": [
+    "#q3\n",
+    "i=5\n",
+    "for i in range(i-1,i):\n",
+    "    if i<= 2:\n",
+    "         print('the person is a baby')\n",
+    "    elif i>2 and i<=4 :\n",
+    "         print('the person is a toddler')\n",
+    "    elif i>4 and i<=13 :\n",
+    "         print('the person is a kid')\n",
+    "    elif i>13 and i<=20 :\n",
+    "         print('the person is a teenager')\n",
+    "    elif i>20 and i<=65 :\n",
+    "         print('the person is an adult')\n",
+    "    else:\n",
+    "        print('the person is an elder')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "22e82f04",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 106,
+   "id": "c8eaeb57",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "-3\n",
+      "-1\n",
+      "1\n"
+     ]
+    }
+   ],
+   "source": [
+    "#q4\n",
+    "\n",
+    "data = [[2, 5], [3, 4], [8, 7]]\n",
+    "for i in data:\n",
+    "        print( i[0]-i[1])\n",
+    "       \n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 108,
+   "id": "59c49bcc",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "IndentationError",
+     "evalue": "unexpected indent (4026101566.py, line 3)",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;36m  Input \u001b[0;32mIn [108]\u001b[0;36m\u001b[0m\n\u001b[0;31m    for i in dict.keys():\u001b[0m\n\u001b[0m    ^\u001b[0m\n\u001b[0;31mIndentationError\u001b[0m\u001b[0;31m:\u001b[0m unexpected indent\n"
+     ]
+    }
+   ],
+   "source": [
+    "#q5\n",
+    "list=[[\"Grae Drake\", 98110], [\"Bethany Kok\"], [\"Alex Nussbacher\", 94101], [\"Darrell Silver\", 11201]]\n",
+    "dict={\"Grae Drake\": 98110,\"Bethany Kok\":'None',\"Alex Nussbacher\":94101,\"Darrell Silver\":11201}\n",
+    " for i in dict.keys():\n",
+    "    #print(i)\n",
+    "    pass\n",
+    " for j in dict.values():\n",
+    "    #print(j)\n",
+    "  print('{}:{}'.format(i,j))\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 89,
+   "id": "5415a98a",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Grae Drake', 'Bethany Kok', 'Alex Nussbacher', 'Darrell Silver']\n",
+      "[11201, 11201, 11201, 11201]\n",
+      "{'{}.format(dict1)': [11201, 11201, 11201, 11201]}\n"
+     ]
+    }
+   ],
+   "source": [
+    "list=[[\"Grae Drake\", 98110], [\"Bethany Kok\"], [\"Alex Nussbacher\", 94101], [\"Darrell Silver\", 11201]]\n",
+    "dict1=[]\n",
+    "for i in list:\n",
+    "    dict1.append(i[0])\n",
+    "\n",
+    "print(dict1)\n",
+    "\n",
+    "dict2=[]\n",
+    "for j in list:\n",
+    "    dict2.append(i[1])\n",
+    "print(dict2)\n",
+    "\n",
+    "dictionary={'{}.format(dict1)':dict2}\n",
+    "print(dictionary)\n",
+    "#?????????"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "817c0672",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.12"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
