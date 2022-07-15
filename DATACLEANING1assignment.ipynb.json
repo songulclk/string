@@ -1,0 +1,319 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9e7fe7b7",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#1\n",
+    "Age:Discrete variable\n",
+    "Salary:continous\n",
+    "Income:continous\n",
+    "Customer: discrete \n",
+    "Stock price:continous\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "6e97d7d8",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Index(['Rank', 'Title', 'Genre', 'Description', 'Director', 'Actors', 'Year',\n",
+      "       'Runtime (Minutes)', 'Rating', 'Votes', 'Revenue (Millions)',\n",
+      "       'Metascore'],\n",
+      "      dtype='object')\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "0    8.1\n",
+       "1    7.0\n",
+       "2    7.3\n",
+       "3    7.2\n",
+       "4    6.2\n",
+       "5    6.1\n",
+       "6    8.3\n",
+       "7    6.4\n",
+       "8    7.1\n",
+       "9    7.0\n",
+       "Name: Rating, dtype: float64"
+      ]
+     },
+     "execution_count": 9,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#2\n",
+    "#1)Select a variable from the movie dataset and discuss the variable type of this variable\n",
+    "import pandas as pd\n",
+    "movies=pd.read_csv('movies.csv')\n",
+    "print(movies.columns)\n",
+    "movies['Rating'].head(10) #chosen variable is Rating. It is numerical and float variable.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "e70a4752",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Rank</th>\n",
+       "      <th>Title</th>\n",
+       "      <th>Genre</th>\n",
+       "      <th>Description</th>\n",
+       "      <th>Director</th>\n",
+       "      <th>Actors</th>\n",
+       "      <th>Year</th>\n",
+       "      <th>Runtime (Minutes)</th>\n",
+       "      <th>Rating</th>\n",
+       "      <th>Votes</th>\n",
+       "      <th>Revenue (Millions)</th>\n",
+       "      <th>Metascore</th>\n",
+       "      <th>RatingCatogrical</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>1</td>\n",
+       "      <td>Guardians of the Galaxy</td>\n",
+       "      <td>Action,Adventure,Sci-Fi</td>\n",
+       "      <td>A group of intergalactic criminals are forced ...</td>\n",
+       "      <td>James Gunn</td>\n",
+       "      <td>Chris Pratt, Vin Diesel, Bradley Cooper, Zoe S...</td>\n",
+       "      <td>2014</td>\n",
+       "      <td>121</td>\n",
+       "      <td>8.1</td>\n",
+       "      <td>757074</td>\n",
+       "      <td>333.13</td>\n",
+       "      <td>76.0</td>\n",
+       "      <td>3</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>2</td>\n",
+       "      <td>Prometheus</td>\n",
+       "      <td>Adventure,Mystery,Sci-Fi</td>\n",
+       "      <td>Following clues to the origin of mankind, a te...</td>\n",
+       "      <td>Ridley Scott</td>\n",
+       "      <td>Noomi Rapace, Logan Marshall-Green, Michael Fa...</td>\n",
+       "      <td>2012</td>\n",
+       "      <td>124</td>\n",
+       "      <td>7.0</td>\n",
+       "      <td>485820</td>\n",
+       "      <td>126.46</td>\n",
+       "      <td>65.0</td>\n",
+       "      <td>2</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>3</td>\n",
+       "      <td>Split</td>\n",
+       "      <td>Horror,Thriller</td>\n",
+       "      <td>Three girls are kidnapped by a man with a diag...</td>\n",
+       "      <td>M. Night Shyamalan</td>\n",
+       "      <td>James McAvoy, Anya Taylor-Joy, Haley Lu Richar...</td>\n",
+       "      <td>2016</td>\n",
+       "      <td>117</td>\n",
+       "      <td>7.3</td>\n",
+       "      <td>157606</td>\n",
+       "      <td>138.12</td>\n",
+       "      <td>62.0</td>\n",
+       "      <td>2</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>4</td>\n",
+       "      <td>Sing</td>\n",
+       "      <td>Animation,Comedy,Family</td>\n",
+       "      <td>In a city of humanoid animals, a hustling thea...</td>\n",
+       "      <td>Christophe Lourdelet</td>\n",
+       "      <td>Matthew McConaughey,Reese Witherspoon, Seth Ma...</td>\n",
+       "      <td>2016</td>\n",
+       "      <td>108</td>\n",
+       "      <td>7.2</td>\n",
+       "      <td>60545</td>\n",
+       "      <td>270.32</td>\n",
+       "      <td>59.0</td>\n",
+       "      <td>2</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>5</td>\n",
+       "      <td>Suicide Squad</td>\n",
+       "      <td>Action,Adventure,Fantasy</td>\n",
+       "      <td>A secret government agency recruits some of th...</td>\n",
+       "      <td>David Ayer</td>\n",
+       "      <td>Will Smith, Jared Leto, Margot Robbie, Viola D...</td>\n",
+       "      <td>2016</td>\n",
+       "      <td>123</td>\n",
+       "      <td>6.2</td>\n",
+       "      <td>393727</td>\n",
+       "      <td>325.02</td>\n",
+       "      <td>40.0</td>\n",
+       "      <td>1</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "   Rank                    Title                     Genre  \\\n",
+       "0     1  Guardians of the Galaxy   Action,Adventure,Sci-Fi   \n",
+       "1     2               Prometheus  Adventure,Mystery,Sci-Fi   \n",
+       "2     3                    Split           Horror,Thriller   \n",
+       "3     4                     Sing   Animation,Comedy,Family   \n",
+       "4     5            Suicide Squad  Action,Adventure,Fantasy   \n",
+       "\n",
+       "                                         Description              Director  \\\n",
+       "0  A group of intergalactic criminals are forced ...            James Gunn   \n",
+       "1  Following clues to the origin of mankind, a te...          Ridley Scott   \n",
+       "2  Three girls are kidnapped by a man with a diag...    M. Night Shyamalan   \n",
+       "3  In a city of humanoid animals, a hustling thea...  Christophe Lourdelet   \n",
+       "4  A secret government agency recruits some of th...            David Ayer   \n",
+       "\n",
+       "                                              Actors  Year  Runtime (Minutes)  \\\n",
+       "0  Chris Pratt, Vin Diesel, Bradley Cooper, Zoe S...  2014                121   \n",
+       "1  Noomi Rapace, Logan Marshall-Green, Michael Fa...  2012                124   \n",
+       "2  James McAvoy, Anya Taylor-Joy, Haley Lu Richar...  2016                117   \n",
+       "3  Matthew McConaughey,Reese Witherspoon, Seth Ma...  2016                108   \n",
+       "4  Will Smith, Jared Leto, Margot Robbie, Viola D...  2016                123   \n",
+       "\n",
+       "   Rating   Votes  Revenue (Millions)  Metascore  RatingCatogrical  \n",
+       "0     8.1  757074              333.13       76.0                 3  \n",
+       "1     7.0  485820              126.46       65.0                 2  \n",
+       "2     7.3  157606              138.12       62.0                 2  \n",
+       "3     7.2   60545              270.32       59.0                 2  \n",
+       "4     6.2  393727              325.02       40.0                 1  "
+      ]
+     },
+     "execution_count": 14,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#2\\2 Categorize a variable of your choice and assign a name to it\n",
+    "def myfunction(Rating):\n",
+    "    if Rating<7:\n",
+    "        return 1\n",
+    "    elif Rating >=7 and Rating<8:\n",
+    "        return 2\n",
+    "    else :\n",
+    "        return 3\n",
+    "movies['RatingCatogrical']=movies['Rating'].apply(myfunction)\n",
+    "movies.head()\n",
+    "        "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "0bf27d99",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "1    555\n",
+       "2    367\n",
+       "3     78\n",
+       "Name: RatingCatogrical, dtype: int64"
+      ]
+     },
+     "execution_count": 15,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#2\\3\n",
+    "movies['RatingCatogrical'].value_counts()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8c322cf9",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#3\n",
+    "# To convert categorical variable into numerical one,we can use 'get.dummies()'command"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "fc7a0a04",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#4 In classification problem, we prefer discrete data over continous data.\n",
+    "#5Continuous data is measured because it can take any value between two values.\n",
+    "#Where as Attribute data is counted because there it takes only integer & finite values.\n",
+    "For example,Number of defective cars in Sept-17, Car with even a single defect will also be counted as defective car, but there will not be fraction or infinite possibilities like 0.5car, 0.25car etc. Car is defective or not defective, thats all."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9ce5ec40",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.12"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
